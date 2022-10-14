@@ -18,7 +18,20 @@ def days_in_month(year, month):
     Returns:
       The number of days in the input month.
     """
+   
+
+    if month == 1 or month == 3 or month == 5 or month == 7 or month == 8 or month == 10 or month == 12:
+      days = 31
+    elif month == 2:
+      days = 28
+    else:
+      days = 30
+    print(days)
     return 0
+
+
+# days_in_month(9998,1)
+
 
 def is_valid_date(year, month, day):
     """
@@ -31,7 +44,18 @@ def is_valid_date(year, month, day):
       True if year-month-day is a valid date and
       False otherwise
     """
+    #checking if the year is valid
+    if year > datetime.MINYEAR and year <datetime.MAXYEAR:
+      if month > 0 and month <13:
+        if month == 1 or month == 3 or month == 5 or month == 7 or month == 8 or month == 10 or month == 12:
+         day == 31
+        if month == 2:
+          day == 28        
+        if month == 4 or month == 6 or month == 9 or month == 11:
+          day == 30      
     return False
+   
+print(is_valid_date(2222, 10, 3))
 
 def days_between(year1, month1, day1, year2, month2, day2):
     """
